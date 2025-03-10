@@ -190,6 +190,29 @@ yarn run serve
 
 The development server is set to reload on change. Now isn't that convenient.
 
+## SQLite Database for Tool Management
+
+A SQLite database is available for easier editing of tool information. This provides a more user-friendly way to edit and manage the tools list, especially when using a database GUI like JetBrains DataGrip or SQLite Browser.
+
+Basic workflow:
+```bash
+# Setup the database
+yarn run db:setup
+
+# Import tools from YAML
+yarn run db:import
+
+# Edit tools using your preferred SQLite GUI
+
+# Export back to YAML
+yarn run db:export
+
+# Rebuild the site
+yarn run build:data:full && yarn run build:site
+```
+
+For details on the database schema and usage, see [db/README.md](db/README.md).
+
 ## Contributing
 
 Please refer to the [Contributing Guide](CONTRIBUTING.md)
